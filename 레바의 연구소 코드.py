@@ -1,17 +1,15 @@
-class assignment:   # 수행평가 클래스 제작
+class assignment:   # 수행평가의 기본 정보를 입력받아 저장하는 클래스를 생성한다.
     def __init__(self):
         name = input("수행평가의 이름: ")
-        teacher = input("수행평가 담당 선생님: ")
         month, day = input("제출 기한: ").split("/")
         X = input("난이도: ")
         self.name = name
-        self.teacher = teacher
         self.month = month
         self.day = int(day)
         if X in ['1', '2', '3', '4', '5']:
             self.X = X
             
-class Stack:   # Stack 구현
+class Stack:   # Stack을 기본적으로 구현
     def __init__(self, k = []) :
         self.items = k
     def isEmpt(self) :
@@ -25,13 +23,13 @@ class Stack:   # Stack 구현
     def size(self) :
         return len(self.items)
     
-from pandas import Series
+from pandas import Series # 캘린더와 같이 내장된 이용할 함수를 임포트한다.
 import numpy as np
 import pandas as pd
 import calendar
 from IPython.display import display
 k = []
-for i in range(0, 10000):  # 수행평가 입력 코드
+for i in range(0, 10000):  # 여러 수행평가를 한 캘린더 안에 담을 수 있도록, 수행평가를 이용자가 입력하고싶은만큼 입력할 수 있도록 O,X를 선택하게한다.
     Q = input('수행평가를 입력하세요: O or X : ')
     if Q == 'O':
         k.append(assignment())
@@ -39,7 +37,7 @@ for i in range(0, 10000):  # 수행평가 입력 코드
         break
 U = Stack()
 
-def calen(n, items):   # 달력 구현 코드 : 요일과 날짜를 표시
+def calen(n, items):   # 임포트한 캘린더 함수를 이용하여 달력의 날짜와 수행평가 입력칸을 구현한다.
     z = 0
     A = calendar.monthrange(2019,n)
     X = ['']*35
@@ -61,4 +59,4 @@ def calen(n, items):   # 달력 구현 코드 : 요일과 날짜를 표시
     pd.DataFrame(cal)
     display(pd.DataFrame(data = cal, columns = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'], index = ['', '', '', '', '', '', '', '', '', '']))
     
-calen(4, k)  # 4월의 달력을 구현. 숫자 4를 바꾸어 다른 달의 달력도 구현할 수 있다.
+calen(10, k)  # 4월의 달력을 구현. 숫자 4를 바꾸어 다른 달의 달력도 구현할 수 있다.
