@@ -59,4 +59,4 @@ def calen(n, items):   # 임포트한 캘린더 함수를 이용하여 달력의
     pd.DataFrame(cal)
     display(pd.DataFrame(data = cal, columns = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'], index = ['', '', '', '', '', '', '', '', '', '']))
     
-calen(10, k)  # 4월의 달력을 구현. 숫자 4를 바꾸어 다른 달의 달력도 구현할 수 있다.
+calen(10, k)  # 4월의 달력을 구현. 숫자 4를 바꾸어 다른 달의 달력도 구현할 수 있다. 
