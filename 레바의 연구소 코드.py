@@ -1,4 +1,4 @@
-class assignment:
+class assignment:   # 수행평가 클래스 제작
     def __init__(self):
         name = input("수행평가의 이름: ")
         teacher = input("수행평가 담당 선생님: ")
@@ -11,7 +11,7 @@ class assignment:
         if X in ['1', '2', '3', '4', '5']:
             self.X = X
             
-class Stack:
+class Stack:   # Stack 구현
     def __init__(self, k = []) :
         self.items = k
     def isEmpt(self) :
@@ -31,7 +31,7 @@ import pandas as pd
 import calendar
 from IPython.display import display
 k = []
-for i in range(0, 10000):
+for i in range(0, 10000):  # 수행평가 입력 코드
     Q = input('수행평가를 입력하세요: O or X : ')
     if Q == 'O':
         k.append(assignment())
@@ -39,7 +39,7 @@ for i in range(0, 10000):
         break
 U = Stack()
 
-def calen(n, items):
+def calen(n, items):   # 달력 구현 코드 : 요일과 날짜를 표시
     z = 0
     A = calendar.monthrange(2019,n)
     X = ['']*35
@@ -61,4 +61,4 @@ def calen(n, items):
     pd.DataFrame(cal)
     display(pd.DataFrame(data = cal, columns = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'], index = ['', '', '', '', '', '', '', '', '', '']))
     
-calen(4, k)
+calen(4, k)  # 4월의 달력을 구현. 숫자 4를 바꾸어 다른 달의 달력도 구현할 수 있다.
